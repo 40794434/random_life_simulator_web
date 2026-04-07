@@ -30,7 +30,8 @@ document.getElementById("intelligence").textContent = stats.intelligence;
 document.getElementById("beginGame").addEventListener("click", startLife);
 
 function startLife(){
-    let nameInput = document.getElementById("name").value;
+    let nameInput = document.getElementById("Name").value;
+    console.log(nameInput);
 
     if(nameInput === ""){
         alert("Please enter a name for your character!");
@@ -43,7 +44,7 @@ function startLife(){
         alive: true,
         stats: stats
     };
-
+    console.log(player);
     localStorage.setItem("player", JSON.stringify(player));
 
     window.location.href = "game.html";
