@@ -1,0 +1,120 @@
+:root {
+    --cream: #F6F0D7;
+    --light-green: #C5D89D;
+    --green: #9CAB84;
+    --dark-green: #89986D;
+    
+}
+
+.back-button{
+    position: absolute;
+    left: 2rem;
+    color: var(--green);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+.back-button:hover{
+    background: rgba(0,0,0,0.2);
+    transform: translateX(-3px);
+    color: var(--dark-green);
+}
+
+.creation{
+    background-color: white;
+    max-width: 500px;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    border-radius: 36px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border: 4px solid var(--green);
+}
+.creation .preview-section .avatar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.creation .preview-section .avatar img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid var(--cream);
+    
+}
+.creation .preview-section .gender-display{
+    margin-bottom: 17px;
+    text-align: center;
+}
+.creation .preview-section .gender-display .gender-box .label{
+    font-weight: bold;
+}
+.name-input{
+    margin-bottom: 2rem;
+}
+.name label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--dark-green);
+    font-size: 1.1rem;
+}
+#Name{
+    width: 100%;
+    font-size: 1.1rem;
+    background: white;
+    border: 2px solid var(--green);
+    border-radius: 55px;
+    padding: 0.5rem 1rem;
+    color: rgb(33, 46, 33);
+    outline: none;
+    transition: all 0.3s ease;
+}
+#Name:focus{
+    border-color: var(--dark-green);
+    box-shadow: 0 0 0 3px rgba(142, 161, 107, 0.2);
+    padding: 1rem 1.1rem;
+}
+.stats-section{
+    margin: 20px 30px;
+}
+.stats-section table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.stats-section table td{
+    padding: 7px;
+    border: 1px solid #ddd;
+}
+.stats-section td:first-child {
+    text-align: left;
+}
+
+.stats-section td:last-child {
+    font-weight: bold;
+}
+.begin-section button{
+    width: 100%;
+    padding: 11px;
+    background: var(--green);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.7s ease;
+}
+.begin-section button a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.begin-section button:hover {
+    background-color: var(--dark-green);
+    transform: translateY(-3px);
+}

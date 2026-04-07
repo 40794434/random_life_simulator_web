@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/createstyle.css">
+    <link rel="stylesheet" href="css/indexstyle.css">
+    <title>Character Creation</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-button">Back</a>
+        <h1>Random Life Simulator</h1>
+    </header>
+    <main>
+        <div class="creation">
+            <div class="preview-section">
+                <div class="avatar">
+                    <img src="images/male2.png" alt="Character Avatar" id="character-avatar">
+                    <div class="age">
+                        <span>18</span> years
+                    </div>
+
+                </div>
+                <div class="gender-display">
+                    <div class="gender-box">
+                        <span class="label">Gender: </span>
+                        <span id="gender">Female</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="name-input">
+                <label for="Name">Enter your Character Name</label>
+                <input type="text" id="Name" maxlength="30">
+            </div>
+
+            
+            <div class="stats-section">
+                <h3>Stats</h3>
+                <table>
+                    <tr>
+                        <td>Happiness</td>
+                        <td id="happiness">50</td>
+                    </tr>
+                    <tr>
+                        <td>Wealth</td>
+                        <td id="wealth">50</td>
+                    </tr>
+                    <tr>
+                        <td>Health</td>
+                        <td id="health">50</td>
+                    </tr>
+                    <tr>
+                        <td>Intelligence</td>
+                        <td id="intelligence">50</td>
+                    </tr>
+                </table>    
+            </div>
+            
+            <div class="begin-section">
+                <button id="beginGame"><a href="game.html">Begin your Life</a></button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
