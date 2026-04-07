@@ -1,0 +1,99 @@
+:root {
+  --cream: #f6f0d7;
+  --light-green: #c5d89d;
+  --green: #9cab84;
+  --dark-green: #89986d;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: var(--dark-green);  */
+  /* color: var(--cream); */
+  
+}
+body{
+    background-color: #f3f4e2;
+}
+header {
+  padding: 2rem;
+  text-align: center;
+  font-family: "Tangerine", serif;
+  color: var(--dark-green);
+  font-size: 1.7rem;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  
+ 
+}
+.about {
+  background-color: var(--green);
+  max-width: 750px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  color: var(--cream);
+}
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  font-family: "Tangerine", serif;
+  font-size: 2.3rem;
+  font-weight: bold;
+  word-spacing: 6px;
+}
+.row {
+  margin-bottom: 25px;
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  word-spacing: 5px; 
+}
+.row h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  
+}
+.row ul {
+  margin-left: 20px;
+}
+.row li {
+  margin-bottom: 5px;
+}
+.about-btn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.about-btn button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--cream);
+  color: white;
+  transition: all 0.8s ease;
+}
+.about-btn button a {
+  text-decoration: none;
+  color: var(--green);
+  font-weight: bold;
+}
+.about-btn button:hover {
+  background-color: #f3f4e2;
+  transform: translateY(-3px);
+  padding: 11px 20px;
+  font-size: 15px;
+}
+.about-btn button a:hover {
+  color: var(--dark-green);
+  
+}
