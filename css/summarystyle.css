@@ -1,0 +1,140 @@
+:root {
+  --cream: #f6f0d7;
+  --light-green: #c5d89d;
+  --green: #9cab84;
+  --dark-green: #89986d;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: var(--light-green);
+  min-height: 100vh;
+  /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; */
+  color: var(--cream);
+}
+header {
+  padding: 3rem;
+  text-align: center;
+  font-size: 1.4rem;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+  animation: fadeInDown 0.8s ease-out;
+  cursor: pointer;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.summary {
+  background-color: var(--cream);
+  width: 40%;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: var(--dark-green);
+}
+.rip {
+  margin-bottom: 20px;
+  font-size: 2.1rem;
+  font-family: "UnifrakturMaguntia", cursive;
+  font-weight: 400;
+}
+.rip .name {
+  margin-top: 10px;
+  font-size: 1.9rem;
+  font-family: "Tangerine", serif;
+  font-weight: bold;
+
+}
+.death-info,
+.deathCause {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.death-info #finalAge,
+.causeOfDeath {
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.life {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode";
+}
+.finalstats h3 {
+  padding: 1.3rem;
+  font-size: 1.4rem;
+}
+.stats-bar {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.stats-bar label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: var(--dark-green);
+}
+.stats-bar progress {
+  width: 90%;
+  height: 35px;
+}
+.stats-bar span {
+  font-size: 1rem;
+  font-weight: bold;
+  float: right;
+  color: var(--dark-green);
+}
+.summaryBtn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.summaryBtn button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+  background: var(--green);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+/* #playAgainBtn {
+  background: var(--light-green);
+} */
+#playAgainBtn a {
+  text-decoration: none;
+  /* color: rgb(119, 124, 12); */
+  color: var(--cream);
+  font-weight: bold;
+}
+
+#graveyardBtn a {
+  text-decoration: none;
+  /* color: rgb(119, 124, 12); */
+  color: var(--cream);
+  font-weight: bold;
+}
+#playAgainBtn:hover {
+  background-color: var(--dark-green);
+  transform: translateY(-3px);
+}
+
+#graveyardBtn:hover {
+  background-color: var(--dark-green);
+  transform: translateY(-3px);
+}

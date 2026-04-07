@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over!</title>
+    <link rel="stylesheet" href="css/summarystyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine"/>
+</head>
+<body>
+    <header>
+        <h1 class="title">Game Over!</h1>
+    </header>
+    <main>
+        <div class="summary">
+            <h2 class="rip">R.I.P <p class="name">Character Name</p></h2>
+            
+            <p class="death-info">
+            Died at age <span id="finalAge">85</span>
+        </p>
+
+            <p class="deathCause">
+                Cause of death: <p class="causeOfDeath">Old Age</p>
+            </p>
+
+            <div class="life">
+                <p class="lifeText">
+                      Your character lived a rather dramatic life filled with unexpected
+                twists, questionable decisions, and mild financial success...
+                </p>
+            </div>
+
+            <div class="finalstats">
+                <h3>Final Stats</h3>
+                <div class="stats-bar">
+                    <label for="">Happiness</label>
+                    <progress id="happinessBar" value="56" max="100"></progress>
+                    <span id="happinessValue">56</span>
+                </div>
+
+                <div class="stats-bar">
+                    <label for="">Wealth</label>
+                    <progress id="wealthBar" value="90" max="100"></progress>
+                    <span id="wealthValue">90</span>
+                </div>
+
+                <div class="stats-bar">
+                    <label for="">Health</label>
+                    <progress id="healthBar" value="30" max="100"></progress>
+                    <span id="healthValue">30</span>
+                </div>
+
+                <div class="stats-bar">
+                    <label for="">Intelligence</label>
+                    <progress id="intelligenceBar" value="68" max="100"></progress>
+                    <span id="intelligenceValue">68</span>
+                </div>
+            </div>
+
+            <div class="summaryBtn">
+                <button id="playAgainBtn"><a href="create.html">Play Again</a></button>
+                <button id="graveyardBtn"><a href="graveyard.html">Graveyard</a></button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
