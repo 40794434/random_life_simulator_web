@@ -110,3 +110,30 @@ body{
     font-size: 1.1rem;
     
 }
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hidden{
+    display: none;
+}
+.modalContent{
+    background: var(--cream);
+    padding: 25px;
+    border-radius: 14px;
+    width: 290px;
+    text-align: center;
+}
+#modalBtns button{
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
