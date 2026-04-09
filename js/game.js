@@ -16,10 +16,26 @@ function displayInfo(){
 }
 
 let events = [
-    { text: "You found money on the street.", effects: { wealth: +10 } },
-    { text: "You got sick.", effects: { health: -15 } },
+    { text: "You found money on the street.", effects: { wealth: +10, happiness: +5} },
+    { text: "You stayed up all night watching random videos.", effects: { health: -15 } },
     { text: "You learned something new.", effects: { intelligence: +8 } },
-    { text: "You had a great day!", effects: { happiness: +10 } }
+    { text: "You accidentally sent a message to the wrong person. Social life damaged.", effects: { happiness: -10 } },
+    {
+        text: "A 'friend' offers you a totally legit investment. Definitely not a scam.",
+        choices:[
+            {
+                text: "Invest it",
+                result: "Congratulations, you have successfully donated your money.",
+                effects: {wealth: -25, intelligence: +5}
+            },
+            {
+                text: "No thanks",
+                result: "You successfully avoided financial disaster. Your future self is proud.",
+                effects: {intelligence: +15}
+            }
+        ]
+    }
+
 ];
 
 function getRandomEvents(){
@@ -50,28 +66,99 @@ function addToEventHistory(text){
 
 }
 
-document.getElementById("nextYearBtn").addEventListener("click", goNextYear);
+function showPopup(text, buttons){
+    let popup = document.getElementById("eventPopUp");
+    let popupText = document.getElementById("modalText");
+    let popupBtns = document.getElementById("modalBtns");
 
+    popupText.textContent = text;
+    popupBtns.innerHTML = "";
 
-function goNextYear(){
-    player.age++;
-    player.alive = true;
-    let event = getRandomEvents();
-    document.getElementById("eventText").textContent = event.text;
+    buttons.forEach(btn => {
+        let button = document.createElement("button");
+        button.textContent = btn.text;
+        button.addEventListener("click",btn.action);
+        popupBtns.appendChild(button);
+    });
+    popup.classList.remove("hidden");
+}
 
-    applyEvents(event.effects);
-    addToEventHistory(event.text);
+function hidePopup(){
+    document.getElementById("eventPopUp").classList.add("hidden");
+}
+
+function afterEvent(){
     checkDeath();
     displayInfo();
 
     localStorage.setItem("player", JSON.stringify(player));
 }
+
+document.getElementById("nextYearBtn").addEventListener("click", goNextYear);
+
+
+function goNextYear(){
+    player.age++;
+    // player.alive = true;
+    let event = getRandomEvents();
+
+    //disable button during popup
+    document.getElementById("nextYearBtn").disabled=true;
+    //if the events have choices feature
+    if(event.choices){
+        showPopup(event.text, event.choices.map(choice=>(
+            {
+                text: choice.text,
+                action: function(){
+                    //result after choosing
+                    showPopup(choice.result,[
+                        {
+                            text: "OK",
+                            action: function(){
+                                applyEvents(choice.effects);
+
+                                addToEventHistory(
+                                    event.text + "->" +
+                                    choice.text + "->"+
+                                    choice.result
+                                );
+
+                                hidePopup();
+                                document.getElementById("nextYearBtn").disabled = false;
+                                afterEvent();
+                            }
+                        }
+                    ])
+                }
+            }
+        )
+
+        ))
+    }
+    //if the events do not have choices feature (simple events)
+    else{
+        showPopup(event.text,[
+            {
+                text: "OK",
+                action: function(){
+                    applyEvents(event.effects);
+                    addToEventHistory(event.text);
+                    hidePopup();
+                    document.getElementById("nextYearBtn").disabled = false;
+                    afterEvent();
+                }
+            }
+        ])
+    }
+
+    
+}
 function checkDeath(){
     if(player.stats.health < 20){
-        endGame("Poor Health");
+        endGame("Your body gave up on your questionable life choices");
     }
     else if(player.age > 85){
-        endGame("Old age");
+        endGame("Old age (U actually made it, impressive!)");
     }
 }
 
