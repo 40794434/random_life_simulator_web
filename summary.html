@@ -14,47 +14,46 @@
     </header>
     <main>
         <div class="summary">
-            <h2 class="rip">R.I.P <p class="name">Character Name</p></h2>
+            <h2 class="rip">R.I.P <p class="name" id="summaryName">Character Name</p></h2>
             
             <p class="death-info">
-            Died at age <span id="finalAge">85</span>
+            Died at age <span id="finalAge"></span>
         </p>
 
             <p class="deathCause">
-                Cause of death: <p class="causeOfDeath">Old Age</p>
+                Cause of death: <p class="causeOfDeath" id ="endReason"></p>
             </p>
 
             <div class="life">
-                <p class="lifeText">
-                      Your character lived a rather dramatic life filled with unexpected
-                twists, questionable decisions, and mild financial success...
+                <p class="lifeText" id="lifeSummary">
                 </p>
+                <p id="ending"></p>
             </div>
 
             <div class="finalstats">
                 <h3>Final Stats</h3>
                 <div class="stats-bar">
                     <label for="">Happiness</label>
-                    <progress id="happinessBar" value="56" max="100"></progress>
-                    <span id="happinessValue">56</span>
+                    <progress id="happinessBar" value="" max="100"></progress>
+                    <span id="happinessValue"></span>
                 </div>
 
                 <div class="stats-bar">
                     <label for="">Wealth</label>
-                    <progress id="wealthBar" value="90" max="100"></progress>
-                    <span id="wealthValue">90</span>
+                    <progress id="wealthBar" value="" max="100"></progress>
+                    <span id="wealthValue"></span>
                 </div>
 
                 <div class="stats-bar">
                     <label for="">Health</label>
-                    <progress id="healthBar" value="30" max="100"></progress>
-                    <span id="healthValue">30</span>
+                    <progress id="healthBar" value="" max="100"></progress>
+                    <span id="healthValue"></span>
                 </div>
 
                 <div class="stats-bar">
                     <label for="">Intelligence</label>
-                    <progress id="intelligenceBar" value="68" max="100"></progress>
-                    <span id="intelligenceValue">68</span>
+                    <progress id="intelligenceBar" value="" max="100"></progress>
+                    <span id="intelligenceValue"></span>
                 </div>
             </div>
 
@@ -65,4 +64,5 @@
         </div>
     </main>
 </body>
+<script src="js/summary.js"></script>
 </html>
