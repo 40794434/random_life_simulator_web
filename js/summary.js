@@ -77,7 +77,8 @@ function saveToGraveyard(){
         {
             name: player.name,
             age: player.age,
-            cause: player.causeOfDeath
+            cause: player.causeOfDeath,
+            summary: writeLifeSummary()
         }
     );
 
