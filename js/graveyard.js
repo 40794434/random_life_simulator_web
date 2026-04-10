@@ -18,7 +18,7 @@ function displayGraveyard(){
         <h3>${person.name}</h3>
         <p>Lived to age ${person.age}</p>
         <p>Cause of death: ${person.cause}</p>
-        <p>Life Summary: ${person.summary}</p>
+        <p class = "grave-description">Life Summary: ${person.summary}</p>
         `;
 
         box.appendChild(card);
