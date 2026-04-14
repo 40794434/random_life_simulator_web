@@ -39,7 +39,37 @@ let events = [
 
 ];
 
+let rareEvents = [
+    {
+        text: "You randomly became famous overnight.",
+        effects: {happiness: +20, wealth: +15}
+    },
+    {
+        text: "You won a lottery you don't remember entering.",
+        effects: {wealth: +25}
+    },
+    {
+        text: "You trusted a 'life hack' from online. It ruined your entire week. ",
+        effects: {happiness: -15, intelligence: -5}
+    },
+    {
+        text: "You tried a dangerous viral challenge. It did not go well.",
+        death: "a completely avoidable internet challenge"
+    },
+    {
+        text: "You accidentally sent your boss a meme... meant for your friend.",
+        effects: {happiness: -20, wealth:-10}
+    }
+];
+
 function getRandomEvents(){
+    //5% chance for rare events
+    if(Math.random()<0.05){
+        let index = Math.floor(Math.random()*rareEvents.length);
+        return rareEvents[index];
+    }
+
+    //for the normal events
     let num = Math.floor(Math.random()* events.length);
     return events[num];
 }
@@ -123,6 +153,17 @@ function goNextYear(){
     // player.alive = true;
     let event = getRandomEvents();
 
+    if(event.death){
+        showPopup(event.text,[
+            {
+                text: "OK",
+                action: function(){
+                    endGame(event.death);
+                }
+            }
+        ]);
+        return;
+    }
     //disable button during popup
     document.getElementById("nextYearBtn").disabled=true;
     //if the events have choices feature
