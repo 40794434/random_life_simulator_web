@@ -22,13 +22,13 @@ body{
 }
 .game{
     display: flex;
-    width: 90%;
+    /* width: 90%; */
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 30px 30px;
     gap: 40px;
 }
 .left-panel{
-    width: 55%;
+    width: 400px;
     background: var(--dark-green);
     padding: 25px;
     border-radius: 10px;
@@ -97,6 +97,7 @@ body{
 }
 .right-panel{
     padding: 1rem 1.2rem;
+    width: 700px;
 
 }
 .current_event h3,.event-log h3{
@@ -108,7 +109,7 @@ body{
 }
 .eventText, .event-log{
     font-size: 1.1rem;
-    
+    font-family: "Trebuchet MS", "Lucida Sans Unicode";
 }
 
 .popup{
@@ -121,6 +122,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode";
 }
 .hidden{
     display: none;

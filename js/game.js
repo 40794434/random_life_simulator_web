@@ -17,6 +17,12 @@ function displayInfo(){
 }
 
 let events = [
+    {text: "You opened your phone for one quick check and somehow lost 2 hours of your life. No one knows where they went.", effects:{intelligence: -9, happiness: +5}},
+    {text: "You bought something you didn't need but absolutely convinced yourself you did.", effects: {wealth: -10, happiness: +5}},
+    {text: "You confidently explained something... and were completely wrong.", effects: {intelligence: -6, happiness:-5}},
+    {text: "You watched an educational video and actually paid attention.", effects: {intelligence: +10}},
+    {text: "You ate something that looked questionable. Your stomach has filed a complaint.", effects: {health: -10}},
+    {text: "You decided to eat healthy this year. Your body is confused but grateful.", effects: {health: +10}},
     { text: "You found money on the street.", effects: { wealth: +10, happiness: +5} },
     { text: "You stayed up all night watching random videos.", effects: { health: -15 } },
     { text: "You learned something new.", effects: { intelligence: +8 } },
@@ -33,6 +39,95 @@ let events = [
                 text: "No thanks",
                 result: "You successfully avoided financial disaster. Your future self is proud.",
                 effects: {intelligence: +15}
+            }
+        ]
+    },
+    {
+        text: "While walking down the street, you spot a wallet lying on the ground. Nobody is around.",
+        choices:[{
+            text: "Return it like a hero",
+            result: "The owner was very grateful and called you a 'rare human being'. You will remember this compliment forever. ",
+            effects: {happiness: +20}
+        },
+        {
+            text: "Take the money.",
+            result: "You gained some cash, but every time you hear footsteps behind you... you panic a little.",
+            effects: {wealth: +15, happiness: -8}
+        }
+        ]
+    },
+    {
+        text: "A friend invites you out for a night of questionable decisions and expensive food.",
+        choices:[
+            {
+                text: "Go out",
+                result: "You laughed, ate too much, and then questioned your life choices at 2AM. Worth it.",
+                effects: {happiness: +15, wealth: -15}
+            },
+            {
+                text: "Stay at home. ",
+                result: "You stayed at home, saved money, and watched videos you won't remember tomorrow.",
+                effects: {wealth: +6, happiness: -9}
+            }
+        ]
+    },
+    {
+        text: "You suddenly feel very motivated to improve your life.. which is suspicious.",
+        choices: [
+            {
+                text: "Exercise",
+                result: "You worked out and felt like a whole new person.",
+                effects: {health: +15}
+            },
+            {
+                text: "Take a nap instead",
+                result: "You took a nap which is so powerful that it felt like time travel.",
+                effects: {happiness: +10, health: -5}
+            }
+        ]
+    },
+    {
+        text: "You made a mistake at work. It's small... for now. No one has noticed yet.",
+        choices: [
+            {
+                text: "Fix it immediately",
+                result: "You fixed it quietly. No one noticed. You feel like a secret genius.",
+                effects: {intelligence: +10}
+            },
+            {
+                text: "Ignore it and pray",
+                result: "It came back later. Bigger. Worse.",
+                effects: {happiness: -12, intelligence: -15}
+            }
+        ]
+    },
+    {
+        text: "You see a massive online sale. Everything is '80% OFF'... including things you don't need.",
+        choices:[
+            {
+                text: "Buy everything",
+                result: "You now own things you didn't know existed. Your wallet is crying.",
+                effects: {wealth: -20, happiness: +12}
+            },
+            {
+                text: "Close the tab",
+                result: "You resisted temptation. This is character development.",
+                effects: {wealth: +6, intelligence: +15}
+            }
+        ]
+    },
+    {
+        text: "A small stay cat looks at you like you are its last hope.",
+        choices: [
+            {
+                text: "Adopt it",
+                result: "It became your emotional support companion. You are now responsible.",
+                effects: {happiness: +15, wealth: -6}
+            },
+            {
+                text: "Walk away",
+                result: "You walked away... but the guilt stayed with you.",
+                effects: {happiness: -6}
             }
         ]
     }
@@ -180,8 +275,8 @@ function goNextYear(){
                                 applyEvents(choice.effects);
 
                                 addToEventHistory(
-                                    event.text + "->" +
-                                    choice.text + "->"+
+                                    event.text + "-> You chooses '" +
+                                    choice.text + "' ->"+
                                     choice.result
                                 );
 

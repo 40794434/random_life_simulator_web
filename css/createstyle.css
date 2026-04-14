@@ -109,11 +109,10 @@
     font-size: 1.1rem;
     font-weight: bold;
     transition: all 0.7s ease;
-}
-.begin-section button a{
     text-decoration: none;
     color: whitesmoke;
 }
+
 .begin-section button:hover {
     background-color: var(--dark-green);
     transform: translateY(-3px);

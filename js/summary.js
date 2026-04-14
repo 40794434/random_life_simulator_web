@@ -22,14 +22,14 @@ function writeLifeSummary(){
     let text = "";
     //intelligence
     if(player.stats.intelligence > 80){
-        text += "You were actually quite smart. Very Impressive!";
+        text += "You were actually quite smart. Very Impressive! ";
     }else if(player.stats.intelligence < 20){
-        text += "Let's just say... you've made quite 'interesting' decisions.";
+        text += "Let's just say... you've made quite 'interesting' decisions. ";
     }
 
     //health
     if(player.stats.health < 30){
-        text += "Your health choices were... quite questionable.";
+        text += "Your health choices were... quite questionable. ";
     }
 
     //wealth
@@ -62,6 +62,35 @@ function createEnding(){
     return endings[randomNum];
 }
 
+function createTitle(){
+    let stats = player.stats;
+    if(stats.wealth > 85){
+        return "The Millionaire";
+    }
+    else if(stats.intelligence > 85){
+        return "The Genius";
+    }
+    else if(stats.happiness > 85){
+        return "The Happy Soul";
+    }
+    else if(stats.health > 85){
+        return "The Survivor";
+    }
+    else if(stats.happiness < 30 &&
+            stats.health < 30 &&
+            stats.wealth < 30
+    ){
+        return "The Walking Disaster";
+    }
+    else{
+        return "Unpredictable One";
+    }
+}
+
+function displayTitle(){
+    let title = createTitle();
+    document.getElementById("playerTitle").textContent = title;
+}
 function displaySummary(){
     let summaryText = writeLifeSummary();
     let ending = createEnding();
@@ -90,8 +119,13 @@ function playAgain(){
     window.location.href = "create.html";
 }
 
+function goGraveyard(){
+    window.location.href = "graveyard.html"
+}
 displayInfo();
 displaySummary();
+displayTitle();
 saveToGraveyard();
 
 document.getElementById("playAgainBtn").addEventListener("click", playAgain);
+document.getElementById("graveyardBtn").addEventListener("click", goGraveyard);

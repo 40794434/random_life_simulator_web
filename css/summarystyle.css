@@ -116,14 +116,14 @@ main {
 /* #playAgainBtn {
   background: var(--light-green);
 } */
-#playAgainBtn a {
+#playAgainBtn {
   text-decoration: none;
   /* color: rgb(119, 124, 12); */
   color: var(--cream);
   font-weight: bold;
 }
 
-#graveyardBtn a {
+#graveyardBtn {
   text-decoration: none;
   /* color: rgb(119, 124, 12); */
   color: var(--cream);

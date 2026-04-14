@@ -51,7 +51,7 @@ main {
 }
 .row {
   margin-bottom: 25px;
-  font-family: "Barriecito", system-ui;
+  font-family: "Barriecito";
   font-weight: 400;
   font-style: normal;
   word-spacing: 5px; 

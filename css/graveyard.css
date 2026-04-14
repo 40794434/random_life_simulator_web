@@ -40,6 +40,12 @@ main{
     grid-template-columns: repeat(3, 1fr);
     gap: 35px;
 }
+.grave_grid p{
+    font-family: "Tangerine", serif;
+    font-size: 2.1rem;
+    text-align: center;
+    font-weight: 800;
+}
 .grave-card{
     background: var(--cream);
     padding: 20px;
@@ -97,8 +103,6 @@ main{
     background-color: var(--green);
     color: white;
     transition: background-color 0.3s ease;
-}
-.grave-btn button a{
     text-decoration: none;
     color: var(--cream);
     font-weight: bold;

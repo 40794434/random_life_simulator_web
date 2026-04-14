@@ -31,5 +31,8 @@ function clear(){
     location.reload();
 }
 document.getElementById("clear").addEventListener("click",clear);
+document.getElementById("goHome").addEventListener("click", function(){
+    window.location.href = "index.html";
+})
 
 displayGraveyard();
