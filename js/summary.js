@@ -62,6 +62,35 @@ function createEnding(){
     return endings[randomNum];
 }
 
+function createTitle(){
+    let stats = player.stats;
+    if(stats.wealth > 85){
+        return "The Millionaire";
+    }
+    else if(stats.intelligence > 85){
+        return "The Genius";
+    }
+    else if(stats.happiness > 85){
+        return "The Happy Soul";
+    }
+    else if(stats.health > 85){
+        return "The Survivor";
+    }
+    else if(stats.happiness < 30 &&
+            stats.health < 30 &&
+            stats.wealth < 30
+    ){
+        return "The Walking Disaster";
+    }
+    else{
+        return "Unpredictable One";
+    }
+}
+
+function displayTitle(){
+    let title = createTitle();
+    document.getElementById("playerTitle").textContent = title;
+}
 function displaySummary(){
     let summaryText = writeLifeSummary();
     let ending = createEnding();
@@ -92,6 +121,7 @@ function playAgain(){
 
 displayInfo();
 displaySummary();
+displayTitle();
 saveToGraveyard();
 
 document.getElementById("playAgainBtn").addEventListener("click", playAgain);
