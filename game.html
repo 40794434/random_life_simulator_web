@@ -6,6 +6,7 @@
     <title>Random Life Simulator</title>
     <!-- <link rel="stylesheet" href="css/indexstyle.css"> -->
     <link rel="stylesheet" href="css/gamestyle.css" />
+    <script src="https://kit.fontawesome.com/ceb58c878a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <main class="game">
@@ -67,6 +68,12 @@
           <div id="eventHistory"></div>
         </div>
       </div>
+
+      <audio src="sounds/increase.mp3" id="increaseEffect"></audio>
+      <audio src="sounds/decrease.mp3" id="decreaseEffect"></audio>
+      <audio src="sounds/death.mp3" id="deathEffect"></audio>
+
+      <button id="muteBtn"><i id="icon" class="fa-solid fa-volume"></i></button>
     </main>
   </body>
    <script src="js/game.js"></script>

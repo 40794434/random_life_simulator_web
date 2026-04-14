@@ -1,5 +1,6 @@
 let player = JSON.parse(localStorage.getItem("player"));
  console.log(player.alive);
+let isMuted = false;
 function displayInfo(){
     document.getElementById("nameDisplay").textContent = player.name;
     document.getElementById("ageDisplay").textContent = player.age;
@@ -44,8 +45,21 @@ function getRandomEvents(){
 }
 
 function applyEvents(effects){
+    let isDecrease = false;
+    let isIncrease = false;
+
     for(let stat in effects){
-        player.stats[stat] += effects[stat];
+        let change = effects[stat];
+
+        player.stats[stat] += change;
+
+        if(change > 0){
+            isIncrease = true;
+        }
+        if(change < 0){
+            isDecrease = true;
+        }
+
 
         if(player.stats[stat] > 100){
             player.stats[stat] = 100;
@@ -53,6 +67,13 @@ function applyEvents(effects){
         if(player.stats[stat] < 0){
             player.stats[stat] = 0;
         }
+    }
+
+    if(isIncrease){
+        playSound("increaseEffect");
+    }
+    else if(isDecrease){
+        playSound("decreaseEffect");
     }
 }
 
@@ -163,11 +184,39 @@ function checkDeath(){
 }
 
 function endGame(reason){
+    playSound("deathEffect");
+
     player.alive = false;
     player.causeOfDeath = reason;
 
     localStorage.setItem("player",JSON.stringify(player));
-    window.location.href = "summary.html";
+    setTimeout(()=>{
+        window.location.href = "summary.html";
+    }, 800);
+}
+
+let icon = document.getElementById("icon");
+
+document.getElementById("muteBtn").addEventListener("click", function(){
+    isMuted = !isMuted;
+    if(isMuted){
+        icon.classList.remove("fa-volume");
+        icon.classList.add("fa-volume-off");
+    }
+    else{
+        icon.classList.remove("fa-volume-off");
+        icon.classList.add("fa-volume");
+    }
+});
+
+function playSound(soundId){
+    if(isMuted) return;
+
+    let sound = document.getElementById(soundId);
+    if(sound){
+        sound.currentTime= 0;
+        sound.play();
+    }
 }
 displayInfo();
 
