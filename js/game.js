@@ -14,8 +14,24 @@ function displayInfo(){
     document.getElementById("wealthBar").value = player.stats.wealth;
     document.getElementById("healthBar").value = player.stats.health;
     document.getElementById("intelligenceBar").value = player.stats.intelligence;
+    changeAvatar();
 }
-
+function changeAvatar(){
+    let image = document.getElementById("gameAvatar")
+    let gender = player.gender.toLowerCase();
+    let age = player.age;
+    
+    let stage = ""
+    if(age >= 18 && age <= 29){
+        stage = "1";
+    }
+    else if(age <= 55){
+        stage = "2"
+    }else{
+        stage = "3"
+    }
+    image.src = `images/${gender.toLowerCase()}_${stage}.jpg`
+}
 let events = [
     {text: "You opened your phone for one quick check and somehow lost 2 hours of your life. No one knows where they went.", effects:{intelligence: -9, happiness: +5}},
     {text: "You bought something you didn't need but absolutely convinced yourself you did.", effects: {wealth: -10, happiness: +5}},

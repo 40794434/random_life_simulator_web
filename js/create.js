@@ -15,6 +15,9 @@ function generateRandomStats(){
         intelligence: getRandomNum(10,90)
     };
 }
+
+
+
 let stats = generateRandomStats();
 let gender = getRandomGender();
 
