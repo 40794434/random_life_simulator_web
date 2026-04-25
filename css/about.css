@@ -81,19 +81,16 @@ main {
   background-color: var(--cream);
   color: white;
   transition: all 0.8s ease;
-}
-.about-btn button a {
   text-decoration: none;
   color: var(--green);
   font-weight: bold;
 }
+
 .about-btn button:hover {
   background-color: #f3f4e2;
   transform: translateY(-3px);
   padding: 11px 20px;
   font-size: 15px;
-}
-.about-btn button a:hover {
   color: var(--dark-green);
-  
 }
+
