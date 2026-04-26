@@ -579,7 +579,7 @@ function endGame(reason){
     localStorage.setItem("player",JSON.stringify(player));
     setTimeout(()=>{
         window.location.href = "summary.html";
-    }, 800);
+    }, 1200);
 }
 
 let icon = document.getElementById("icon");
