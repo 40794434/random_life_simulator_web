@@ -127,19 +127,36 @@ let events = [
     {text: "You finally understands why your parents hated your music. It's called perspective.", minAge: 30, maxAge: 55, effects: {happiness: +5, intelligence: +4}},
     {text: "You forgot your own phone number. For a solid minute, you were lost.", minAge: 30, maxAge: 55, effects: {intelligence: -8, happiness: -8}},
     {text: "You saw someone famous in public. You played it cool, then texted everyone.", minAge: 30, maxAge: 55, effects: {happiness: +20}},
+    
     {
-        text: "You suddenly feel very motivated to improve your life.. which is suspicious.",
+        text: "You found a lump. It's probably nothing. Probably.",
         minAge: 30, maxAge: 55, 
         choices: [
             {
-                text: "Exercise",
-                result: "You worked out and felt like a whole new person.",
-                effects: {health: +15}
+                text: "Go to the doctor",
+                result: "It was nothing. You wasted a day but gained peace of mind.",
+                effects: {health: +5, happiness: +10, wealth: -25}
             },
             {
-                text: "Take a nap instead",
-                result: "You took a nap which is so powerful that it felt like time travel.",
-                effects: {happiness: +10, health: -5}
+                text: "Ignore",
+                result: "It was nothing. But now you're paranoid about everything.",
+                effects: {happiness: -15, intelligence: -5, health: -3}
+            }
+        ]
+    },
+    {
+        text: "Your childhood friend wants to start a business together. It's a 'sure thing.'",
+        minAge: 30, maxAge: 55, 
+        choices: [
+            {
+                text: "Invest",
+                result: "The business failed. The friendship survived. Barely.",
+                effects: {wealth: -35, happiness: -10, intelligence: -8}
+            },
+            {
+                text: "Politely decline",
+                result: "They started without you and also failed. You dodged a bullet.",
+                effects: {happiness: +10, intelligence: +10}
             }
         ]
     },
