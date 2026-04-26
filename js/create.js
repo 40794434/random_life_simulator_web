@@ -3,9 +3,13 @@ function getRandomNum(min,max){
 }
 
 function getRandomGender(){
-    let genders = ["Female", "Male"];
+    let genders = ["female", "male"];
     let randomNum = Math.floor(Math.random()*genders.length);
-    return genders[randomNum];
+    let genderResult = genders[randomNum];
+
+    let image = document.getElementById("character-avatar");
+    image.src = `images/${genderResult}_1.jpg`;
+    return genderResult;
 }
 function generateRandomStats(){
     return{
@@ -32,6 +36,15 @@ document.getElementById("intelligence").textContent = stats.intelligence;
 
 document.getElementById("beginGame").addEventListener("click", startLife);
 
+// function changeAvatar(){
+//     let image = document.getElementById("character-avatar");
+//     let genderInput = document.getElementById("gender");
+//     let gender = genderInput.value.toLowerCase();
+
+//     image.src = `images/${gender}_1.jpg`;
+//     print(image.src);
+// }
+// changeAvatar();
 function startLife(){
     let nameInput = document.getElementById("Name").value;
     console.log(nameInput);
