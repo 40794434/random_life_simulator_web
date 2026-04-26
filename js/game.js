@@ -34,7 +34,7 @@ function changeAvatar(){
 }
 let events = [
     //for 18-29
-    {text: "You tried a new diet where you only eat eir. Surprisingly effective? Not really.", maxAge: 29, effects: {health: -10, happiness: -5}},
+    {text: "You tried a new diet where you only eat air. Surprisingly effective? Not really.", maxAge: 29, effects: {health: -10, happiness: -5}},
     {text: "You attempted to cook yourself a fancy meal. The fire department now knows your name.", maxAge: 29, effects: {health: -5, wealth: -30, intelligence: +5}},
     {text: "You won a lifetime supply of potato chips. Your body is not ready. ",maxAge: 29, effects: {happiness: +20, health: -8}},
     {text: "You found out that 'free trial' means 'give us your credit card'. You feel betrayed. ", maxAge: 29,effects: {happiness: -12, intelligence: +10}},
@@ -351,6 +351,14 @@ let rareEvents = [
     {
         text: "You tried a dangerous viral challenge. It did not go well.",
         death: "a completely avoidable internet challenge"
+    },
+    {
+        text: "You tried to pet a wild raccoon. It was not friendly. It had opinions.",
+        death: "An Overly Optimistic Wildlife Encounter"
+    },
+    {
+        text: "You wanted to see if a fork in the microwave would really cause a problem. It did.",
+        death: "a scientific experiment gone wrong"
     },
     {
         text: "You accidentally sent your boss a meme... meant for your friend.",
