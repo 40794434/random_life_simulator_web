@@ -68,13 +68,49 @@ body{
 }
 .stats-bar progress{
     width: 100%;
-    height: 35px;
+    height: 25px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
 
 }
 .stats-bar span {
     font-size: 13px;
     float: right;
     color: var(--cream);
+}
+
+.stats-bar progress::-webkit-progress-bar {
+    background-color: #d8d2c2;
+    border-radius: 10px;
+}
+
+.stats-bar progress.goodStat::-webkit-progress-value {
+    background-color: #72b87e;
+    border-radius: 10px;
+}
+
+.stats-bar progress.midStat::-webkit-progress-value {
+    background-color: #D8C27A;
+    border-radius: 10px;
+}
+
+.stats-bar progress.lowStat::-webkit-progress-value {
+    background-color: #A85C4D;
+    border-radius: 10px;
+}
+
+/* Firefox support */
+.stats-bar progress.goodStat::-moz-progress-bar {
+    background-color: #72b87e;
+}
+
+.stats-bar progress.midStat::-moz-progress-bar {
+    background-color: #D8C27A;
+}
+
+.stats-bar progress.lowStat::-moz-progress-bar {
+    background-color: #A85C4D;
 }
 #nextYearBtn {
     margin-top: 20px;

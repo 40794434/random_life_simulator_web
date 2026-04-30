@@ -14,7 +14,7 @@ function getRandomGender(){
 function generateRandomStats(){
     return{
         happiness: getRandomNum(10,90),
-        health: getRandomNum(20,80),
+        health: getRandomNum(40,80),
         wealth: getRandomNum(10,90),
         intelligence: getRandomNum(10,90)
     };

@@ -6,15 +6,41 @@ function displayInfo(){
     document.getElementById("finalAge").textContent = player.age;
     document.getElementById("endReason").textContent = player.causeOfDeath;
 
-    document.getElementById("happinessValue").textContent = player.stats.happiness;
-    document.getElementById("wealthValue").textContent = player.stats.wealth;
-    document.getElementById("healthValue").textContent = player.stats.health;
-    document.getElementById("intelligenceValue").textContent = player.stats.intelligence;
+    // document.getElementById("happinessValue").textContent = player.stats.happiness;
+    // document.getElementById("wealthValue").textContent = player.stats.wealth;
+    // document.getElementById("healthValue").textContent = player.stats.health;
+    // document.getElementById("intelligenceValue").textContent = player.stats.intelligence;
 
-    document.getElementById("happinessBar").value = player.stats.happiness;
-    document.getElementById("wealthBar").value = player.stats.wealth;
-    document.getElementById("healthBar").value = player.stats.health;
-    document.getElementById("intelligenceBar").value = player.stats.intelligence;
+    // document.getElementById("happinessBar").value = player.stats.happiness;
+    // document.getElementById("wealthBar").value = player.stats.wealth;
+    // document.getElementById("healthBar").value = player.stats.health;
+    // document.getElementById("intelligenceBar").value = player.stats.intelligence;
+    updateStatbar("happiness");
+    updateStatbar("wealth");
+    updateStatbar("health");
+    updateStatbar("intelligence");
+}
+
+function updateStatbar(statName) {
+    let value = player.stats[statName];
+
+    let bar = document.getElementById(statName + "Bar");
+    let text = document.getElementById(statName + "Value");
+
+    bar.value = value;
+    text.textContent = value;
+    console.log(value);
+    bar.classList.remove("lowStat", "midStat", "goodStat");
+
+    if (value < 30) {
+        bar.classList.add("lowStat");
+    } 
+    else if (value < 60) {
+        bar.classList.add("midStat");
+    } 
+    else {
+        bar.classList.add("goodStat");
+    }
 }
 
 //write the life summary for the player's life
