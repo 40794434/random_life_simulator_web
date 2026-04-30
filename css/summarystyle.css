@@ -58,6 +58,7 @@ main {
 .deathCause {
   margin-bottom: 10px;
   font-weight: bold;
+  font-family: "Georgia", serif;
 }
 .death-info #finalAge,
 .causeOfDeath {
@@ -65,13 +66,15 @@ main {
   font-weight: 800;
   cursor: pointer;
   padding-bottom: 10px;
+  font-family: cursive;
 }
 
 .life {
   margin: 20px 0;
   line-height: 1.6;
   font-size: 1rem;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode";
+  font-family: "Georgia", serif;
+  font-weight: bold;
 }
 .finalstats h3 {
   padding: 1.3rem;
