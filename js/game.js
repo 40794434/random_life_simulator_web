@@ -376,7 +376,7 @@ let rareEvents = [
     },
     {
         text: "You tried a dangerous viral challenge. It did not go well.",
-        death: "a completely avoidable internet challenge"
+        death: "A completely Avoidable Internet Challenge"
     },
     {
         text: "You tried to pet a wild raccoon. It was not friendly. It had opinions.",
@@ -384,7 +384,7 @@ let rareEvents = [
     },
     {
         text: "You wanted to see if a fork in the microwave would really cause a problem. It did.",
-        death: "a scientific experiment gone wrong"
+        death: "A Scientific Experiment Gone Wrong"
     },
     {
         text: "You accidentally sent your boss a meme... meant for your friend.",
@@ -586,7 +586,7 @@ function checkDeath(){
     if(player.stats.health < 20){
         endGame("Your body gave up on your questionable life choices");
     }
-    else if(player.age > 85){
+    else if(player.age > 80){
         endGame("Old age (U actually made it, impressive!)");
     }
 }
