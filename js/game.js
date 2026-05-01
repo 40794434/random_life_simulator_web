@@ -489,12 +489,7 @@ function hidePopup(){
     document.getElementById("eventPopUp").classList.add("hidden");
 }
 
-function afterEvent(){
-    checkDeath();
-    displayInfo();
 
-    localStorage.setItem("player", JSON.stringify(player));
-}
 
 document.getElementById("nextYearBtn").addEventListener("click", goNextYear);
 
@@ -607,7 +602,12 @@ function endGame(reason){
         window.location.href = "summary.html";
     }, 1200);
 }
+function afterEvent(){
+    checkDeath();
+    displayInfo();
 
+    localStorage.setItem("player", JSON.stringify(player));
+}
 let icon = document.getElementById("icon");
 
 document.getElementById("muteBtn").addEventListener("click", function(){
